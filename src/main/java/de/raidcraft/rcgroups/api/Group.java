@@ -11,7 +11,7 @@ public interface Group {
 
     void addPlayer(OfflinePlayer player);
 
-    boolean removesPlayer(OfflinePlayer player);
+    boolean removePlayer(OfflinePlayer player);
 
     boolean hasPlayer(OfflinePlayer player);
 

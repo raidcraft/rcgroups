@@ -5,10 +5,10 @@ import de.raidcraft.api.config.ConfigurationBase;
 /**
  *
  */
-public class Configuration extends ConfigurationBase<GroupPlugin> {
+public class Configuration extends ConfigurationBase<GroupsPlugin> {
 
 
-    public Configuration(final GroupPlugin plugin) {
+    public Configuration(final GroupsPlugin plugin) {
 
         super(plugin, "config.yml");
     }

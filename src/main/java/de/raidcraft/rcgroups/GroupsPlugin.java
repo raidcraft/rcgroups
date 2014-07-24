@@ -4,9 +4,9 @@ import de.raidcraft.api.BasePlugin;
 import lombok.Getter;
 
 /**
- * The entry point for the Group Plugin.
+ * The entry point for the Groups Plugin.
  */
-public class GroupPlugin extends BasePlugin {
+public class GroupsPlugin extends BasePlugin {
 
     @Getter
     private Configuration config;
