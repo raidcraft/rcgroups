@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>masterpom</artifactId>
+        <groupId>de.raidcraft</groupId>
+        <version>RELEASE</version>
+    </parent>
+
+    <packaging>jar</packaging>
+
+    <artifactId>rcgroup</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <!-- +++++++++++++++++++++++++
+        Project Information
+         +++++++++++++++++++++++++ -->
+
+    <name>Group</name>
+
+    <description>
+        A collection of Player characters that can communicate amongst each other privately and share XP.
+    </description>
+
+    <url>http://www.raid-craft.de/</url>
+    <inceptionYear>2014</inceptionYear>
+
+    <organization>
+        <name>Raid-Craft</name>
+        <url>http://www.raid-craft.de/</url>
+    </organization>
+
+    <!-- +++++++++++++++++++++++++
+    Environment Settings
+     +++++++++++++++++++++++++ -->
+
+    <issueManagement>
+        <system>Redmine</system>
+        <url>http://issues.raid-craft.de/</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:ssh://git@raid-craft.de:22109/raid-craft-de/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@raid-craft.de:22109/raid-craft-de/${project.artifactId}.git</developerConnection>
+        <url>http://git.raid-craft.de/raid-craft-de/${project.artifactId</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>raidcraft</id>
+            <url>http://nexus.raid-craft.de/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <!-- +++++++++++++++++++++++++
+    Dependencies
+     +++++++++++++++++++++++++ -->
+
+    <dependencies>
+        <dependency>
+            <groupId>de.raidcraft</groupId>
+            <artifactId>raidcraft-api</artifactId>
+            <version>${rc.version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- +++++++++++++++++++++++++
+        Build
+         +++++++++++++++++++++++++ -->
+
+</project>
