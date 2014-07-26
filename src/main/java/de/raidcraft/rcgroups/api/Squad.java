@@ -17,4 +17,7 @@ public interface Squad extends Group {
 
     void setColor(ChatColor color);
 
+    boolean canSeeFriendlyInvisibles();
+
+    void setCanSeeFriendlyInvisibles(boolean enabled);
 }
