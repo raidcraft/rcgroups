@@ -1,24 +1,22 @@
 package de.raidcraft.rcgroups.api.event;
 
+import de.raidcraft.api.events.RCPlayerEvent;
 import de.raidcraft.rcgroups.api.Group;
 import lombok.Getter;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
-import org.bukkit.event.HandlerList;
-import org.bukkit.event.player.PlayerEvent;
 
 /**
  * Called when a player gets kicked from a group.
  */
-public class GroupKickEvent extends PlayerEvent implements GroupEvent, Cancellable {
+public class GroupKickEvent extends RCPlayerEvent implements GroupEvent, Cancellable {
 
-    private static final HandlerList HANDLERS = new HandlerList();
+    @Getter
+    private final CommandSender executor;
+    @Getter
+    private final Group group;
     private boolean cancel;
-    @Getter
-    private CommandSender executor;
-    @Getter
-    private Group group;
 
     public GroupKickEvent(final Player playerKicked, final Group fromGroup, final CommandSender executor) {
 
@@ -27,11 +25,6 @@ public class GroupKickEvent extends PlayerEvent implements GroupEvent, Cancellab
         this.group = fromGroup;
         this.executor = executor;
         this.cancel = false;
-    }
-
-    public static HandlerList getHandlerList() {
-
-        return HANDLERS;
     }
 
     @Override
@@ -44,11 +37,5 @@ public class GroupKickEvent extends PlayerEvent implements GroupEvent, Cancellab
     public void setCancelled(final boolean cancel) {
 
         this.cancel = cancel;
-    }
-
-    @Override
-    public HandlerList getHandlers() {
-
-        return HANDLERS;
     }
 }
