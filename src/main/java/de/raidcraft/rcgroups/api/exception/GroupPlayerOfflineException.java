@@ -3,7 +3,7 @@ package de.raidcraft.rcgroups.api.exception;
 /**
  *
  */
-public class GroupPlayerOfflineException extends GroupException{
+public class GroupPlayerOfflineException extends GroupException {
 
     private static final long serialVersionUID = -1590774281694356673L;
 
