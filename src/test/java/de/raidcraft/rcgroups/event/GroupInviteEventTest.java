@@ -24,10 +24,19 @@ public class GroupInviteEventTest {
     private GroupInviteEvent event;
 
     @Before
-    public void Setup() {
+    public void setUp() {
 
         this.mockPlayer = mock(Player.class);
         this.mockInviter = mock(Player.class);
+    }
+
+    @After
+    @SuppressWarnings("AssignmentToNull")
+    public void tearDown() {
+
+        this.mockPlayer = null;
+        this.mockInviter = null;
+        this.mockGroup = null;
     }
 
     @Test
@@ -38,10 +47,5 @@ public class GroupInviteEventTest {
         // DISPATCH
 
         // TEST
-    }
-
-    @After
-    public void Takedown() {
-
     }
 }
