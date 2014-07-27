@@ -1,15 +1,18 @@
 package de.raidcraft.rcgroups.api.event;
 
-import de.raidcraft.api.events.RCEvent;
 import de.raidcraft.rcgroups.api.Group;
 import de.raidcraft.rcgroups.api.InviteRequest;
 import lombok.Getter;
 import org.bukkit.event.Cancellable;
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
 
 /**
  * Called when a player gets invited to a group.
  */
-public class GroupInviteEvent extends RCEvent implements GroupEvent, Cancellable {
+public class GroupInviteEvent extends Event implements GroupEvent, Cancellable {
+
+    private static final HandlerList HANDLER = new HandlerList();
 
     @Getter
     private final InviteRequest inviteRequest;
@@ -24,6 +27,11 @@ public class GroupInviteEvent extends RCEvent implements GroupEvent, Cancellable
         this.cancel = false;
     }
 
+    public static HandlerList getHandlerList() {
+
+        return HANDLER;
+    }
+
     @Override
     public boolean isCancelled() {
 
@@ -34,5 +42,11 @@ public class GroupInviteEvent extends RCEvent implements GroupEvent, Cancellable
     public void setCancelled(final boolean cancel) {
 
         this.cancel = cancel;
+    }
+
+    @Override
+    public HandlerList getHandlers() {
+
+        return HANDLER;
     }
 }

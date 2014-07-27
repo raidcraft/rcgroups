@@ -1,18 +1,18 @@
 package de.raidcraft.rcgroups.api.event;
 
-import de.raidcraft.api.events.RCPlayerEvent;
 import de.raidcraft.rcgroups.api.Group;
 import lombok.Getter;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
+import org.bukkit.event.player.PlayerEvent;
 
 /**
  * Called when a player leaves a group.
  */
-public class GroupLeaveEvent extends RCPlayerEvent implements GroupEvent, Cancellable {
+public class GroupLeaveEvent extends PlayerEvent implements GroupEvent, Cancellable {
 
-    private static final HandlerList HANDLERS = new HandlerList();
+    private static final HandlerList HANDLER = new HandlerList();
     @Getter
     private final Group group;
     private boolean cancel;
@@ -25,6 +25,11 @@ public class GroupLeaveEvent extends RCPlayerEvent implements GroupEvent, Cancel
         this.cancel = false;
     }
 
+    public static HandlerList getHandlerList() {
+
+        return HANDLER;
+    }
+
     @Override
     public boolean isCancelled() {
 
@@ -35,5 +40,11 @@ public class GroupLeaveEvent extends RCPlayerEvent implements GroupEvent, Cancel
     public void setCancelled(final boolean cancel) {
 
         this.cancel = cancel;
+    }
+
+    @Override
+    public HandlerList getHandlers() {
+
+        return HANDLER;
     }
 }
