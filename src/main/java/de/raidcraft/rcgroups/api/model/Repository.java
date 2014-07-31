@@ -1,4 +1,4 @@
-package de.raidcraft.rcgroups.api;
+package de.raidcraft.rcgroups.api.model;
 
 import java.util.Collection;
 import java.util.HashMap;

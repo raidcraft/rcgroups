@@ -1,4 +1,4 @@
-package de.raidcraft.rcgroups.api;
+package de.raidcraft.rcgroups.api.model;
 
 import lombok.Value;
 import org.bukkit.entity.Player;

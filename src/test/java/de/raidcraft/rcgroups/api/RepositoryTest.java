@@ -1,6 +1,7 @@
 package de.raidcraft.rcgroups.api;
 
 import de.raidcraft.rcgroups.api.entity.Group;
+import de.raidcraft.rcgroups.api.model.Repository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
