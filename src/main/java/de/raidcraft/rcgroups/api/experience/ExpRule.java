@@ -3,7 +3,7 @@ package de.raidcraft.rcgroups.api.experience;
 /**
  *
  */
-public enum ExpDistribution {
+public enum ExpRule {
 
     NONE, EVEN, FFA, MASTER, RANDOM, ROUND
 }

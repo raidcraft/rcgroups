@@ -1,4 +1,4 @@
-package de.raidcraft.rcgroups.api;
+package de.raidcraft.rcgroups.api.entity;
 
 /**
  * Represents a big group.

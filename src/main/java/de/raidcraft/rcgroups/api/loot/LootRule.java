@@ -3,7 +3,7 @@ package de.raidcraft.rcgroups.api.loot;
 /**
  *
  */
-public enum LootDistribution {
+public enum LootRule {
 
     NONE, FFA, MASTER, RANDOM, ROUND
 }
