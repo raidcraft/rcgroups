@@ -1,9 +1,6 @@
 package de.raidcraft.rcgroups.event;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-
-import de.raidcraft.rcgroups.api.Group;
+import de.raidcraft.rcgroups.api.entity.Group;
 import de.raidcraft.rcgroups.api.event.GroupInviteEvent;
 import org.bukkit.entity.Player;
 import org.junit.After;
@@ -11,6 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.modules.junit4.PowerMockRunner;
+
+import static org.mockito.Mockito.mock;
 
 /**
  *
@@ -40,9 +39,7 @@ public class GroupInviteEventTest {
     }
 
     @Test
-    public void ShouldBe() {
-
-        this.event = new GroupInviteEvent(this.mockPlayer, this.mockGroup, this.mockInviter);
+    public void shouldBe() {
 
         // DISPATCH
 
