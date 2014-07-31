@@ -1,6 +1,6 @@
 package de.raidcraft.rcgroups.api.event;
 
-import de.raidcraft.rcgroups.api.Group;
+import de.raidcraft.rcgroups.api.entity.Group;
 import lombok.Getter;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

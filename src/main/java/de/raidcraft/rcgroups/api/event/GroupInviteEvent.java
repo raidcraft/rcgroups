@@ -1,6 +1,6 @@
 package de.raidcraft.rcgroups.api.event;
 
-import de.raidcraft.rcgroups.api.Group;
+import de.raidcraft.rcgroups.api.entity.Group;
 import de.raidcraft.rcgroups.api.InviteRequest;
 import lombok.Getter;
 import org.bukkit.event.Cancellable;
