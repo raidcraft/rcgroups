@@ -1,7 +1,7 @@
 package de.raidcraft.rcgroups.api.entity;
 
-import de.raidcraft.rcgroups.api.experience.ExpRule;
-import de.raidcraft.rcgroups.api.loot.LootRule;
+import de.raidcraft.rcgroups.api.rule.ExpRule;
+import de.raidcraft.rcgroups.api.rule.LootRule;
 import org.bukkit.OfflinePlayer;
 
 import java.util.Set;
