@@ -1,8 +1,7 @@
 package de.raidcraft.rcgroups;
 
+import de.raidcraft.RaidCraft;
 import de.raidcraft.api.BasePlugin;
-import de.raidcraft.rcgroups.api.model.Repository;
-import de.raidcraft.rcgroups.api.entity.Group;
 import lombok.Getter;
 
 /**
@@ -12,22 +11,24 @@ public class GroupsPlugin extends BasePlugin {
 
     @Getter
     private Configuration config;
-    @Getter
-    private Repository<Group> groupRepository;
 
     @Override
     public void enable() {
 
-        this.config = new Configuration(this);
-        this.groupRepository = new Repository<>();
+        // register ourself as a group component.
+        RaidCraft.registerComponent(GroupsPlugin.class, this);
 
+        // create the config
+        this.config = configure(new Configuration(this));
     }
 
     @SuppressWarnings("AssignmentToNull")
     @Override
     public void disable() {
 
+        RaidCraft.unregisterComponent(GroupsPlugin.class);
+
         this.config.save();
-        this.groupRepository = null;
+        this.config = null;
     }
 }
