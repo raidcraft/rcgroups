@@ -1,9 +1,7 @@
-package de.raidcraft.rcgroups.api.model;
+package de.raidcraft.rcgroups.model;
 
 import lombok.Value;
 import org.bukkit.entity.Player;
-
-import java.util.Date;
 
 /**
  *

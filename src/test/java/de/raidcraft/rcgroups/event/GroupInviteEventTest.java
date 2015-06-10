@@ -1,7 +1,6 @@
 package de.raidcraft.rcgroups.event;
 
-import de.raidcraft.rcgroups.api.entity.Group;
-import de.raidcraft.rcgroups.api.event.GroupInviteEvent;
+import de.raidcraft.rcgroups.type.Group;
 import org.bukkit.entity.Player;
 import org.junit.After;
 import org.junit.Before;

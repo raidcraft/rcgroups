@@ -1,4 +1,4 @@
-package de.raidcraft.rcgroups.api;
+package de.raidcraft.rcgroups;
 
 /**
  * The role of a player in a Group.

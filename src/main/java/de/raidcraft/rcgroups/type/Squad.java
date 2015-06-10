@@ -1,4 +1,4 @@
-package de.raidcraft.rcgroups.api.entity;
+package de.raidcraft.rcgroups.type;
 
 import org.bukkit.ChatColor;
 

@@ -1,29 +1,28 @@
-package de.raidcraft.rcgroups.api.event;
+package de.raidcraft.rcgroups.event;
 
-import de.raidcraft.rcgroups.api.entity.Group;
-import de.raidcraft.rcgroups.api.model.InviteRequest;
+import de.raidcraft.rcgroups.type.Group;
 import lombok.Getter;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
-import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.bukkit.event.player.PlayerEvent;
 
 /**
- * Called when a player gets invited to a group.
+ * Called when a player joins a group.
  */
-public class GroupInviteEvent extends Event implements GroupEvent, Cancellable {
+public class GroupJoinEvent extends PlayerEvent implements GroupEvent, Cancellable {
 
     private static final HandlerList HANDLER = new HandlerList();
 
     @Getter
-    private final InviteRequest inviteRequest;
-    @Getter
     private final Group group;
     private boolean cancel;
 
-    public GroupInviteEvent(final InviteRequest inviteRequest, final Group group) {
+    public GroupJoinEvent(final Player playerJoined, final Group groupJoined) {
 
-        this.inviteRequest = inviteRequest;
-        this.group = group;
+        super(playerJoined);
+
+        this.group = groupJoined;
         this.cancel = false;
     }
 

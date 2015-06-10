@@ -1,4 +1,4 @@
-package de.raidcraft.rcgroups.api.rule;
+package de.raidcraft.rcgroups.rule;
 
 /**
  * Experience share rule.

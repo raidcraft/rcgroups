@@ -1,28 +1,32 @@
-package de.raidcraft.rcgroups.api.event;
+package de.raidcraft.rcgroups.event;
 
-import de.raidcraft.rcgroups.api.entity.Group;
+import de.raidcraft.rcgroups.type.Group;
 import lombok.Getter;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 
 /**
- * Called when a player joins a group.
+ * Called when a player gets kicked from a group.
  */
-public class GroupJoinEvent extends PlayerEvent implements GroupEvent, Cancellable {
+public class GroupKickEvent extends PlayerEvent implements GroupEvent, Cancellable {
 
     private static final HandlerList HANDLER = new HandlerList();
 
     @Getter
+    private final CommandSender executor;
+    @Getter
     private final Group group;
     private boolean cancel;
 
-    public GroupJoinEvent(final Player playerJoined, final Group groupJoined) {
+    public GroupKickEvent(final Player playerKicked, final Group fromGroup, final CommandSender executor) {
 
-        super(playerJoined);
+        super(playerKicked);
 
-        this.group = groupJoined;
+        this.group = fromGroup;
+        this.executor = executor;
         this.cancel = false;
     }
 

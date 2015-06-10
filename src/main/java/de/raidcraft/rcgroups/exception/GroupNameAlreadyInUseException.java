@@ -1,4 +1,4 @@
-package de.raidcraft.rcgroups.api.exception;
+package de.raidcraft.rcgroups.exception;
 
 /**
  *
