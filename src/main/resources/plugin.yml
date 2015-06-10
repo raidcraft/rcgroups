@@ -4,6 +4,6 @@ version: ${project.version}#${build.number}
 author: Almon
 website: raid-craft.de
 
-main de.raidcraft.rcgroups.GroupsPlugin
+main: de.raidcraft.rcgroups.GroupsPlugin
 database: false
 depend: [RaidCraft-API]
