@@ -137,6 +137,8 @@ public class IdPool {
             if (size == indices.length) {
                 indices = Arrays.copyOf(indices, size + (size >> 1));
             }
+
+            indices[size++] = index;
         }
 
         return result;
