@@ -121,7 +121,7 @@ public class IdPool {
      *
      * @return True if the pool has shrunk and reusable indices have been
      * removed from the pool to keep the values returned by {@link #pop()} at
-     * their smallest possible vales, otherwise false.
+     * their smallest possible values, otherwise false.
      */
 
     public boolean put(final int index) {
