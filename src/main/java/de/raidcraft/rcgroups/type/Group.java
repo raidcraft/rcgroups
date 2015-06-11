@@ -1,5 +1,6 @@
 package de.raidcraft.rcgroups.type;
 
+import de.raidcraft.rcgroups.GroupType;
 import de.raidcraft.rcgroups.rule.ExpRule;
 import de.raidcraft.rcgroups.rule.LootRule;
 import org.bukkit.OfflinePlayer;
@@ -7,7 +8,7 @@ import org.bukkit.OfflinePlayer;
 import java.util.Set;
 
 /**
- *
+ * A small or large number of people.
  */
 public interface Group {
 
@@ -33,11 +34,15 @@ public interface Group {
 
     int getSize();
 
-    void setLootRule(LootRule lootRule);
+    int getMaxSize();
 
-    void setExpRule(ExpRule expRule);
+    void setLootRule(LootRule lootRule);
 
     LootRule getLootRule();
 
+    void setExpRule(ExpRule expRule);
+
     ExpRule getExpRule();
+
+    GroupType getGroupType();
 }
