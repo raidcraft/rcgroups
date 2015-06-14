@@ -1,9 +1,17 @@
 package de.raidcraft.rcgroups.util;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  *
@@ -26,38 +34,90 @@ public class TestIndexedSet {
     }
 
     @Test
-    public void testGetIDReturnsInvalidId()
-    {
+    public void testGetIDReturnsInvalidId() {
+
         Element elementNotInSet = new Element(1);
 
-        Assert.assertEquals(IndexedSet.INVALID_ID, set.getId(elementNotInSet));
+        assertEquals(IndexedSet.INVALID_ID, set.getId(elementNotInSet));
     }
 
     @Test
-    public void testGetReturnsNull()
-    {
+    public void testGetReturnsNull() {
+
         int idNotInSet = 7;
 
-        Assert.assertNull(set.get(idNotInSet));
+        assertNull(set.get(idNotInSet));
     }
 
     @Test
-    public void testAddElement()
-    {
+    public void testAddElement() {
+
         Element element = new Element(1);
 
-        Assert.assertTrue(set.add(element));
-        Assert.assertFalse(set.add(element));
+        assertTrue(set.add(element));
+        assertFalse(set.add(element));
     }
 
     @Test
-    public void testSetElement()
-    {
+    public void testSetElement() {
+
         Element element = new Element(1);
         int id = set.set(element);
 
-        Assert.assertNotEquals(IndexedSet.INVALID_ID, id);
-        Assert.assertEquals(id, set.set(element));
+        assertNotEquals(IndexedSet.INVALID_ID, id);
+        assertEquals(id, set.set(element));
+    }
+
+    @Test
+    public void testRemoveElementReturnsFalse() {
+
+        Element elementNotInSet = new Element(1);
+
+        assertFalse(set.removeElement(elementNotInSet));
+    }
+
+    @Test
+    public void testRemoveIdReturnsFalse() {
+
+        int idNotInSet = 7;
+
+        assertFalse(set.removeId(idNotInSet));
+    }
+
+    @Test
+    public void testRemoveElement() {
+
+        List<Element> values = new ArrayList<>();
+        for (int i = 0; i < 32; i++) values.add(i, new Element(i));
+
+        for (int j = 0; j < 2; j++) {
+
+            for (int i = 0; i < 10; i++) set.set(values.get(i));
+
+            assertTrue(set.contains(values.get(0)));
+
+            set.removeElement(values.get(0));
+
+            assertFalse(set.contains(values.get(0)));
+        }
+    }
+
+    @Test
+    public void testRemoveId() {
+
+        List<Element> values = new ArrayList<>();
+        for (int i = 0; i < 32; i++) values.add(i, new Element(i));
+
+        for (int j = 0; j < 2; j++) {
+
+            for (int i = 0; i < 10; i++) set.set(values.get(i));
+
+            assertTrue(set.contains(values.get(0)));
+
+            set.removeId(0);
+
+            assertFalse(set.contains(values.get(0)));
+        }
     }
 
     /**
@@ -73,8 +133,8 @@ public class TestIndexedSet {
             this.id = id;
         }
 
-        public String toString()
-        {
+        public String toString() {
+
             return "{ Element id: " + id + " }";
         }
     }

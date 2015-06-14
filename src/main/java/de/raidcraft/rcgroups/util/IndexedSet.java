@@ -41,7 +41,7 @@ public class IndexedSet<E> extends ForwardingSet<E> {
 
         int id = getId(element);
 
-        if(id == INVALID_ID) {
+        if (id == INVALID_ID) {
             id = idPool.pop();
             toValueMap.put(id, element);
         }
@@ -101,5 +101,63 @@ public class IndexedSet<E> extends ForwardingSet<E> {
         return toValueMap.containsValue(element)
                 ? toValueMap.inverse().get(element)
                 : INVALID_ID;
+    }
+
+    /**
+     * Removes the mapping for a <code>element</code> from this set.
+     *
+     * @return True if the mapping was successfully removed, false if
+     * <code>element</code> does not exist in this set.
+     */
+
+    public boolean removeElement(final E element) {
+
+        int id = getId(element);
+
+        if (id != INVALID_ID) {
+
+            toValueMap.remove(id, element);
+            idPool.put(id);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Removes the mapping for a <code>id</code> from this set.
+     *
+     * @return True if mapping was successfully removed, false if
+     * <code>id</code> does not exist in this set.
+     */
+
+    public boolean removeId(final int id) {
+
+        E element = get(id);
+
+        if (element != null) {
+
+            toValueMap.remove(id, element);
+            idPool.put(id);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Unsupported Operation.
+     * <p/>
+     * Use {@link #removeId(int)} or {@link #removeElement(Object)} instead.
+     */
+
+    @Override
+    public boolean remove(final Object object) {
+
+        throw new UnsupportedOperationException(
+                "Use `removeId(int)` or `removeElement(Object)` instead."
+        );
     }
 }
