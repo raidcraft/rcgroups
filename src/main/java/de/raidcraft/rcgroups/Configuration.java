@@ -23,6 +23,10 @@ public class Configuration extends ConfigurationBase<GroupsPlugin> {
     @Comment("Maximum squad size [0, Integer.MAX_VALUE]")
     public int maxSquadSize = Integer.MAX_VALUE;
 
+    @Setting("expected.numberOfGroups")
+    @Comment("Performance setting")
+    public int expectedNumberOfGroups = 8;
+
     public Configuration(final GroupsPlugin plugin) {
 
         super(plugin, CONFIG_NAME);
