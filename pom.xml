@@ -15,34 +15,7 @@
     <packaging>jar</packaging>
 
     <artifactId>rcgroup</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
-
-    <!-- +++++++++++++++++++++++++
-        Project Information
-         +++++++++++++++++++++++++ -->
-
-    <name>Group</name>
-
-    <description>
-        A collection of Player characters that can communicate amongst each other privately and share XP.
-    </description>
-
-    <url>http://www.raid-craft.de/</url>
-    <inceptionYear>2014</inceptionYear>
-
-    <organization>
-        <name>Raid-Craft</name>
-        <url>http://www.raid-craft.de/</url>
-    </organization>
-
-    <!-- +++++++++++++++++++++++++
-    Environment Settings
-     +++++++++++++++++++++++++ -->
+    <version>1.12-0.1-SNAPSHOT</version>
 
     <repositories>
         <repository>
@@ -57,33 +30,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>de.raidcraft</groupId>
+            <groupId>de.faldoria</groupId>
             <artifactId>raidcraft-api</artifactId>
-            <version>1.6.3-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <type>jar</type>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-            <version>1.5.5</version>
-            <type>jar</type>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito</artifactId>
-            <version>1.5.5</version>
-            <type>jar</type>
-            <scope>test</scope>
+            <version>1.12-0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
